@@ -1,5 +1,4 @@
 # Database_Replicator_py
- Helper for replicating database data
 -----
 
 Small helper that allows the creation of .sql files with the insert clause
