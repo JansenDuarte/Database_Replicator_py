@@ -20,6 +20,7 @@ gen_path = os.path.dirname(__file__) + '\\Generated_SQLs\\'
 csv_files = [f for f in os.listdir(csv_path)]
 
 column_names = ''
+item_separator = ',\t'
 
 #This makes a pretty good .sql, but you still need to fix wich is int or varchar,
 #remove the initial index and the last comma of the values
@@ -46,13 +47,24 @@ for csv_file in csv_files:
 
         for row in reader:
             if row_count == 0:
-                column_names = ',\t'.join(row) if useIndex else (','.join(row).split(',', 1)[1])
+                if useIndex:
+                     column_names = item_separator.join(row)
+                else:
+                     column_names = item_separator.join(row)
+                     column_names = column_names.split(item_separator, 1)[1]
+                     
                 column = sql_insert_clause.format(db_name, table_name, column_names)
                 output_file.write(column + '\n')
+                
             else:
-                values = ',\t'.join(row) if useIndex else (','.join(row).split(',', 1)[1])
+                if useIndex:
+                     values = item_separator.join(row)
+                else:
+                     values = item_separator.join(row)
+                     values = values.split(item_separator, 1)[1]
+                     
                 values = sql_value_clause.format(values)
-                output_file.write(values + ', \n')
+                output_file.write(values + ',\n')
 
             row_count += 1
 
