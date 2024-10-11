@@ -8,7 +8,7 @@ for every exported values from a db.
 How to
 ===
 
-You need the .csv files of the data you want to export.
+You need the .csv files of the data you want to insert.
 
 Most of the db engines export data with the primary id.
 If your primary id is AUTO_INCREMENT, just use option 'n' when asked to
@@ -21,7 +21,7 @@ Run DbRep.py, and done!
 Known Issues
 ===
 
-The .sql files generated with no regard to wich field is NUMBER or
+The .sql files are generated with no regard to wich field is NUMBER or
 VARCHAR. You need to place single quotes accordinly.
 
 The last line will have an additional comma. Just get rid of it.
