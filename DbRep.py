@@ -39,18 +39,18 @@ for csv_file in csv_files:
 
 	#	utf-8-sig encoding is used to remove garbage from the start of the file
     with open(csv_path + csv_file, encoding="utf-8-sig") as csv_file:
-        reader = csv.reader(csv_file, quotechar='"', skipinitialspace= True)
+        reader = csv.reader(csv_file, quotechar='"', skipinitialspace=True)
         
         row_count = 0;
         values = '';
 
         for row in reader:
             if row_count == 0:
-                column_names = ','.join(row) if useIndex else (','.join(row).split(',', 1)[1])
+                column_names = ',\t'.join(row) if useIndex else (','.join(row).split(',', 1)[1])
                 column = sql_insert_clause.format(db_name, table_name, column_names)
                 output_file.write(column + '\n')
             else:
-                values = ','.join(row) if useIndex else (','.join(row).split(',', 1)[1])
+                values = ',\t'.join(row) if useIndex else (','.join(row).split(',', 1)[1])
                 values = sql_value_clause.format(values)
                 output_file.write(values + ', \n')
 
