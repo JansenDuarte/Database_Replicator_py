@@ -1,26 +1,37 @@
-# Database_Replicator_py
------
+Database_Replicator_py
+===
 
 Small helper that allows the creation of .sql files with the insert clause
 for every exported values from a db.
------
 
-## Known Issues
+
+How to
+===
 
 You need the .csv files of the data you want to export.
+
+Most of the db engines export data with the primary id.
+If your primary id is AUTO_INCREMENT, just use option 'n' when asked to
+gerenate the sql with the first index.
+
+Run DbRep.py, and done!
+
+
+
+Known Issues
+===
 
 The .sql files generated with no regard to wich field is NUMBER or
 VARCHAR. You need to place single quotes accordinly.
 
-Most of the db engines export data with the primary id.
-If your primary id is AUTO_INCREMENT, you need to remove it manualy
-from the .sql (easier than removing it from the .csv)
------
+The last line will have an additional comma. Just get rid of it.
 
-## Future Features
 
+Future Features
+===
 I don't know brother! I did this thing in 15 min. If I find a few
 different uses for it, or if you want to add something, hit me up
 and show me your changes!
 
 Cheers! Keep creating! Love, JD!
+===
