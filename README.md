@@ -33,5 +33,11 @@ I don't know brother! I did this thing in 15 min. If I find a few
 different uses for it, or if you want to add something, hit me up
 and show me your changes!
 
-Cheers! Keep creating! Love, JD!
+
+Special Thanks
+===
+Thank you wifey, for keeping up with my shenanigans. And thank you Manolo for helping with the shenanigans!
+
+
+Cheers! Keep Creating! Love, JD
 ===
